@@ -8,23 +8,23 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:import/warnings",
+    // "plugin:import/typescript",
     "plugin:import/errors",
     // "plugin:sonarjs/recommended",
     "plugin:jsx-a11y/recommended",
-    "react-app",
+    // "react-app",
     "google",
     // "airbnb",
     // "wesbos",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
-  parser: [
-    "@typescript-eslint/parser",
-    "@babel/eslint-parser",
-  ],
+  parser: "@babel/eslint-parser",
   parserOptions: {
+    "requireConfigFile": false,
+    "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
     "sourceType": "module",
     // "ecmaVersion": "latest",
-    "ecmaVersion": 7,
+    // "ecmaVersion": 7,
     "ecmaFeatures": {
       "modules": true,
       "jsx": true,
@@ -70,5 +70,31 @@ module.exports = {
     "quote-props": ["warn", "as-needed"],
     "no-multi-spaces": "warn",
     "react/boolean-prop-naming": "warn",
+    "indent": ["warn", 2],
+    "object-curly-spacing": [2, "always"],
+    'require-jsdoc': [
+      'error',
+      {
+        require: {
+          FunctionDeclaration: false,
+          MethodDefinition: false,
+          ClassDeclaration: false,
+          ArrowFunctionExpression: false,
+          FunctionExpression: false,
+        },
+      },
+    ],
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+          "extensions": ['.js', '.jsx', '.ts', '.tsx'],
+          "moduleDirectory": ['node_modules', 'src/'],
+      },
+      // "typescript": {}
+    }
   },
 }
