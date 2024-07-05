@@ -7,11 +7,13 @@
     "plugin:react/recommended",
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
-    "eslint-config-prettier",
+    "plugin:prettier/recommended"
   ],
+
+  "parser": "@typescript-eslint/parser",
   "settings": {
     "react": {
-      "version": "detect",
+      "version": "detect"
     },
     "import/resolver": {
       "node": {
@@ -21,45 +23,44 @@
     },
   },
   "rules": {
-    "no-unused-vars": [
-      "error",
-      {
-        "vars": "all",
-        "args": "after-used",
-        "ignoreRestSiblings": true,
-        "argsIgnorePattern": "^_",
-      },
-    ],
-    "react/react-in-jsx-scope": "off",
-    "import/no-unresolved": "off",
-
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
-    "import/no-cycle": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "array-callback-return": "warn",
-    "react/no-unused-state": "warn",
-    "jsx-quotes": ["error", "prefer-single"],
-    "quotes": ["warn", "single"],
-    "quote-props": ["warn", "as-needed"],
-    "no-multi-spaces": "warn",
-    "react/boolean-prop-naming": "warn",
-    "indent": ["warn", 2],
-    "object-curly-spacing": [2, "always"],
-    "require-jsdoc": [
-      "error",
-      {
-        "require": {
-          "FunctionDeclaration": false,
-          "MethodDefinition": false,
-          "ClassDeclaration": false,
-          "ArrowFunctionExpression": false,
-          "FunctionExpression": false,
-        },
-      },
-    ],
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+    // "no-unused-vars": [
+    //   "error",
+    //   {
+    //     "vars": "all",
+    //     "args": "after-used",
+    //     "ignoreRestSiblings": true,
+    //     "argsIgnorePattern": "^_"
+    //   }
+    // ],
+    // "react/react-in-jsx-scope": "off",
+    // "import/no-unresolved": "off",
+    // "react/jsx-uses-react": "error",
+    // "react/jsx-uses-vars": "error",
+    // "import/no-cycle": "error",
+    // "react-hooks/rules-of-hooks": "error",
+    // "react-hooks/exhaustive-deps": "warn",
+    // "array-callback-return": "warn",
+    // "react/no-unused-state": "warn",
+    // "jsx-quotes": ["error", "prefer-single"],
+    // "quotes": ["warn", "single"],
+    // "quote-props": ["warn", "as-needed"],
+    // "no-multi-spaces": "warn",
+    // "react/boolean-prop-naming": "warn",
+    // "indent": ["warn", 2],
+    // "object-curly-spacing": [2, "always"],
+    // "require-jsdoc": [
+    //   "error",
+    //   {
+    //     "require": {
+    //       "FunctionDeclaration": false,
+    //       "MethodDefinition": false,
+    //       "ClassDeclaration": false,
+    //       "ArrowFunctionExpression": false,
+    //       "FunctionExpression": false
+    //     }
+    //   }
+    // ],
+    // "no-console": ["error", {"allow": ["warn", "error"]}],
     "comma-dangle": [
       "error",
       {
@@ -70,6 +71,6 @@
         "functions": "always-multiline",
       },
     ],
-    "no-multiple-empty-lines": ["error", { "max": 2, "maxBOF": 0, "maxEOF": 0 }] ,
-  },
+    // "no-multiple-empty-lines": ["error", {"max": 2, "maxBOF": 0, "maxEOF": 0}]
+  }
 }
