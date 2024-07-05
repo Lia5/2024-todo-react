@@ -9,7 +9,6 @@
     "plugin:jsx-a11y/recommended",
     "eslint-config-prettier",
   ],
-  "plugins": ["react", "react-hooks", "jsx-a11y", "import"],
   "settings": {
     "react": {
       "version": "detect",
@@ -71,6 +70,6 @@
         "functions": "always-multiline",
       },
     ],
-    "no-multiple-empty-lines": ["error", { "max": 2, "maxBOF": 0, "maxEOF": 0 }],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxBOF": 0, "maxEOF": 0 }] ,
   },
 }
