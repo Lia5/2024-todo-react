@@ -1,11 +1,11 @@
-import { PropsWithChildren } from 'react';
-import { AppBar } from './../AppBar';
+import { FC, ReactElement } from 'react';
+import { AppBar } from '@/components/AppBar';
 
-type Props = {
-  children: string | JSX.Element | JSX.Element[] | (() => JSX.Element);
-};
+interface LayoutProps extends React.PropsWithChildren {
+  children: ReactElement;
+}
 
-export const Layout = (props: PropsWithChildren<Props>) => {
+export const Layout: FC<LayoutProps> = (props) => {
   return (
     <>
       <AppBar />

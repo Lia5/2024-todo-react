@@ -11,7 +11,7 @@
   --black: #000;
   --lightBlack: #282828;
   --border: #D2D1D1;
-  --placeholder: #9b9a9a
+  --placeholder: #9b9a9a;
 }
 
 @mixin media-sm {
@@ -25,6 +25,7 @@
       @content;
   }
 }
+
 @mixin media-lg {
   @media (min-width: #{992px}) {
       @content;
