@@ -1,0 +1,51 @@
+:root {
+  --mainColor: #1B84BF;
+  --primary: #0d6efd;
+  --primaryHover: #0b5ed7;
+  --primaryBorder: #0a58ca;
+  --warning: #ffc107;
+  --warningHover: #ffca2c;
+  --warningBorder: #ffc720;
+  --danger: #BF1B1B;
+  --white: #fff;
+  --black: #000;
+  --lightBlack: #282828;
+  --border: #D2D1D1;
+  --placeholder: #9b9a9a;
+}
+
+@mixin media-sm {
+  @media (min-width: #{576px}) {
+      @content;
+  }
+}
+
+@mixin media-md {
+  @media (min-width: #{768px}) {
+      @content;
+  }
+}
+
+@mixin media-lg {
+  @media (min-width: #{992px}) {
+      @content;
+  }
+}
+
+@mixin media-xl {
+  @media (min-width: #{1140px}) {
+      @content;
+  }
+}
+
+@mixin media-xxl {
+  @media (min-width: #{1400px}) {
+      @content;
+  }
+}
+
+@mixin media-1921 {
+  @media (min-width: #{1921px}) {
+      @content;
+  }
+}

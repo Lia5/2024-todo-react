@@ -1,0 +1,25 @@
+.lang {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px 0;
+
+  &__item {
+      display: none;
+
+      & + span {
+          display: inline-flex;
+          margin: 0 10px;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: var(--lightBlack);
+          cursor: pointer;
+          transition: 0.5s;
+      }
+
+      &.active + span,
+      &:hover + span {
+          color: var(--mainColor);
+      }
+  }
+}

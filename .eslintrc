@@ -7,7 +7,8 @@
     "plugin:react/recommended",
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react/jsx-runtime"
   ],
 
   "parser": "@typescript-eslint/parser",
@@ -18,9 +19,10 @@
     "import/resolver": {
       "node": {
         "paths": ["src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"],
-      },
-    },
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+    // "import/ignore": ["\\.img$", ".(scss|less|css)$"]
   },
   "rules": {
     // "no-unused-vars": [
@@ -33,7 +35,7 @@
     //   }
     // ],
     // "react/react-in-jsx-scope": "off",
-    // "import/no-unresolved": "off",
+    "import/no-unresolved": "off",
     // "react/jsx-uses-react": "error",
     // "react/jsx-uses-vars": "error",
     // "import/no-cycle": "error",
@@ -68,9 +70,9 @@
         "objects": "always-multiline",
         "exports": "always-multiline",
         "imports": "always-multiline",
-        "functions": "always-multiline",
-      },
-    ],
+        "functions": "always-multiline"
+      }
+    ]
     // "no-multiple-empty-lines": ["error", {"max": 2, "maxBOF": 0, "maxEOF": 0}]
   }
 }
