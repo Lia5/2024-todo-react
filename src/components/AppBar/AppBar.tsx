@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './AppBar.scss';
 
 interface AppBarProps {
@@ -12,8 +13,8 @@ export const AppBar: React.FC<AppBarProps> = ({ handleChangeLanguage, handleChoo
   return (
     <div className="container">
       <nav className="lang">
-        {langs.map((item, index) => (
-          <label key={index}>
+        {langs.map((item) => (
+          <label key={uuidv4()}>
             <input type="radio" name="lang" className="lang__item" onClick={() => handleChooseLanguage(item)} />
             <span> {item} </span>
           </label>
