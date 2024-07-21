@@ -1,6 +1,12 @@
+import React from 'react';
 import './AppBar.scss';
 
-export const AppBar = () => {
+interface AppBarProps {
+  handleChangeLanguage: () => void;
+  handleChooseLanguage: (language: string) => void;
+}
+
+export const AppBar: React.FC<AppBarProps> = ({ handleChangeLanguage, handleChooseLanguage }) => {
   const langs = ['ua', 'en'];
 
   return (
@@ -8,11 +14,15 @@ export const AppBar = () => {
       <nav className="lang">
         {langs.map((item, index) => (
           <label key={index}>
-            <input type="radio" name="lang" className="lang__item" />
+            <input type="radio" name="lang" className="lang__item" onClick={() => handleChooseLanguage(item)} />
             <span> {item} </span>
           </label>
         ))}
       </nav>
+
+      <button type="button" onClick={handleChangeLanguage}>
+        Change Language
+      </button>
     </div>
   );
 };
