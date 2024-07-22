@@ -1,13 +1,13 @@
 input[type="text"] {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 10px 17px 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--lightBlack);
+  outline: none;
   font-size: 14px;
   line-height: 1;
-  padding: 10px 17px 10px;
-  color: var(--lightBlack);
-  border: 1px solid var(--border);
-  box-sizing: border-box;
-  border-radius: 3px;
-  flex-grow: 1;
-  outline: none;
 
   &::placeholder {
     color: var(--placeholder);
@@ -26,12 +26,12 @@ input[type="checkbox"] {
       position: absolute;
       top: 5px;
       left: 0;
+      box-sizing: border-box;
       width: 12px;
       height: 12px;
-      background: #b8b8b8;
       border: 1px solid transparent;
-      box-sizing: border-box;
       border-radius: 3px;
+      background: #b8b8b8;
     }
 
     &:after {
@@ -43,9 +43,9 @@ input[type="checkbox"] {
       height: 3px;
       border-bottom: 2px solid var(--white);
       border-left: 2px solid var(--white);
-      transform: rotate(-45deg);
-      transition: 0.5s;
       opacity: 0;
+      transition: 0.5s;
+      transform: rotate(-45deg);
     }
 
     &:hover {

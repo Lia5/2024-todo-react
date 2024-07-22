@@ -1,12 +1,12 @@
 .swal2-container {
    .swal2-title {
         margin-bottom: 26px;
+        padding: 25px 0 0;
+        color: var(--black);
+        font-weight: 400;
         font-size: 12px;
         line-height: 15px;
-        font-weight: 400;
         text-align: center;
-        color: var(--black);
-        padding: 25px 0 0;
     }
     .swal2-actions {
         display: flex;
