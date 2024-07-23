@@ -7,16 +7,16 @@
 }
 
 .list {
-    border: 1px solid var(--border);
     margin: 15px 0 30px;
     padding: 0 calc(-1.5rem * -.5);
+    border: 1px solid var(--border);
     list-style: none;
 
     &__item {
         display: flex;
         align-items: center;
-        cursor: pointer;
         padding: 10px 0;
+        cursor: pointer;
 
         &:not(:first-child) {
             border-top: 1px solid var(--border);
@@ -39,10 +39,10 @@
 .acc {
     &__title {
         position: relative;
+        margin: 10px 0 0 -18px;
         color: var(--mainColor);
         font-size: 12px;
         line-height: 15px;
-        margin: 10px 0 0 -18px;
         cursor: pointer;
 
         &:before {
@@ -51,10 +51,10 @@
             width: 7px;
             height: 9px;
             margin-right: 11px;
-            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='7' height='9' viewBox='0 0 7 9' fill='none'%3e%3cline x1='1.85355' y1='0.646447' x2='5.85355' y2='4.64645' stroke='%231B84BF'/%3e%3cline x1='1.14645' y1='8.64645' x2='5.14645' y2='4.64645' stroke='%231B84BF'/%3e%3c/svg%3e");
             background-position: center;
             background-size: 7px 9px;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='7' height='9' viewBox='0 0 7 9' fill='none'%3e%3cline x1='1.85355' y1='0.646447' x2='5.85355' y2='4.64645' stroke='%231B84BF'/%3e%3cline x1='1.14645' y1='8.64645' x2='5.14645' y2='4.64645' stroke='%231B84BF'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
             transition: 0.5s;
 
         }
@@ -65,19 +65,19 @@
             }
 
             &+.acc__content {
-                height: 100%;
                 overflow: visible;
+                height: 100%;
                 opacity: 1;
             }
         }
     }
 
     &__content {
+        overflow: hidden;
+        height: 0;
         margin: 0;
         padding: 14px 0;
         list-style: none;
-        height: 0;
-        overflow: hidden;
         opacity: 0;
         transition: height 3s;
     }
@@ -85,10 +85,10 @@
 
 .done-item {
     margin-bottom: 6px;
-    text-decoration: line-through;
+    color: #7B7B7B;
     font-size: 12px;
     line-height: 15px;
-    color: #7B7B7B;
+    text-decoration: line-through;
     cursor: pointer;
     transition: 0.5s;
 

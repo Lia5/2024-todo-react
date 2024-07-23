@@ -1,18 +1,11 @@
+import React from 'react';
 import './AppBar.scss';
+import { LangBar } from './LangBar';
 
-export const AppBar = () => {
-  const langs = ['ua', 'en'];
-
+export const AppBar: React.FC = () => {
   return (
     <div className="container">
-      <nav className="lang">
-        {langs.map((item, index) => (
-          <label key={index}>
-            <input type="radio" name="lang" className="lang__item" />
-            <span> {item} </span>
-          </label>
-        ))}
-      </nav>
+      <LangBar />
     </div>
   );
 };
