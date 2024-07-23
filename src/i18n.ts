@@ -6,8 +6,8 @@ import uaJSON from '@/locale/ua.json';
 // eslint-disable-next-line import/no-named-as-default-member
 i18n.use(initReactI18next).init({
   resources: {
-    en: { transation: enJSON },
-    ua: { transation: uaJSON },
+    en: { translation: enJSON },
+    ua: { translation: uaJSON },
   },
   lng: 'en',
 });
