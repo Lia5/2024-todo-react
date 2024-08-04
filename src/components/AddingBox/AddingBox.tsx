@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import spritePlus from '../../assets/sprite.svg';
+import sprite from '../../assets/sprite.svg';
 import './AddingBox.scss';
 
 export const AddingBox = () => {
@@ -13,7 +13,7 @@ export const AddingBox = () => {
           <input id="todo-field" type="text" placeholder="" />
           <button className="btn-icon btn btn-primary">
             <svg>
-              <use href={`${spritePlus}#plus`} />
+              <use href={`${sprite}#plus`} />
             </svg>
           </button>
         </div>

@@ -1,98 +1,96 @@
 .lists {
-    display: none;
+display: none;
 
-    &.show {
-        display: block;
-    }
+&.show {
+  display: block;
+}
 }
 
 .list {
-    margin: 15px 0 30px;
-    padding: 0 calc(-1.5rem * -.5);
-    border: 1px solid var(--border);
-    list-style: none;
+  margin: 15px 0 30px;
+  margin: 15px 0 29px;
+  padding: 0;
+  list-style: none;
 
-    &__item {
-        display: flex;
-        align-items: center;
-        padding: 10px 0;
-        cursor: pointer;
+  &-item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
 
-        &:not(:first-child) {
-            border-top: 1px solid var(--border);
-        }
+      span {
+        padding-left: 20px;
+      }
+      &+.list-item {
+        margin-top: 14px;
+      }
+  }
 
-        span {
-            padding-left: 20px;
-        }
-    }
+  label {
+      cursor: pointer;
+  }
 
-    label {
-        cursor: pointer;
-    }
-
-    &--completed {
-        color: #6f6f6f;
-    }
+  &--completed {
+      color: #6f6f6f;
+  }
 }
 
 .acc {
-    &__title {
-        position: relative;
-        margin: 10px 0 0 -18px;
-        color: var(--mainColor);
-        font-size: 12px;
-        line-height: 15px;
-        cursor: pointer;
+  &__title {
+    position: relative;
+    margin: 10px 0 0 -18px;
+    color: var(--mainColor);
+    font-size: 12px;
+    line-height: 15px;
+    cursor: pointer;
 
-        &:before {
-            content: "";
-            display: inline-flex;
-            width: 7px;
-            height: 9px;
-            margin-right: 11px;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='7' height='9' viewBox='0 0 7 9' fill='none'%3e%3cline x1='1.85355' y1='0.646447' x2='5.85355' y2='4.64645' stroke='%231B84BF'/%3e%3cline x1='1.14645' y1='8.64645' x2='5.14645' y2='4.64645' stroke='%231B84BF'/%3e%3c/svg%3e");
-            background-position: center;
-            background-size: 7px 9px;
-            background-repeat: no-repeat;
-            transition: 0.5s;
+    &:before {
+      content: "";
+      display: inline-flex;
+      width: 7px;
+      height: 9px;
+      margin-right: 11px;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='7' height='9' viewBox='0 0 7 9' fill='none'%3e%3cline x1='1.85355' y1='0.646447' x2='5.85355' y2='4.64645' stroke='%231B84BF'/%3e%3cline x1='1.14645' y1='8.64645' x2='5.14645' y2='4.64645' stroke='%231B84BF'/%3e%3c/svg%3e");
+      background-position: center;
+      background-size: 7px 9px;
+      background-repeat: no-repeat;
+      transition: 0.5s;
 
-        }
-
-        &.open {
-            &:before {
-                transform: rotate(90deg);
-            }
-
-            &+.acc__content {
-                overflow: visible;
-                height: 100%;
-                opacity: 1;
-            }
-        }
     }
 
-    &__content {
-        overflow: hidden;
-        height: 0;
-        margin: 0;
-        padding: 14px 0;
-        list-style: none;
-        opacity: 0;
-        transition: height 3s;
+    &.open {
+      &:before {
+        transform: rotate(90deg);
+      }
+
+      &+.acc__content {
+        overflow: visible;
+        height: 100%;
+        opacity: 1;
+      }
     }
+  }
+
+  &__content {
+    overflow: hidden;
+    height: 0;
+    margin: 0;
+    padding: 14px 0;
+    list-style: none;
+    opacity: 0;
+    transition: height 3s;
+  }
 }
 
 .done-item {
-    margin-bottom: 6px;
-    color: #7B7B7B;
-    font-size: 12px;
-    line-height: 15px;
-    text-decoration: line-through;
-    cursor: pointer;
-    transition: 0.5s;
+  margin-bottom: 6px;
+  color: #7B7B7B;
+  font-size: 12px;
+  line-height: 15px;
+  text-decoration: line-through;
+  cursor: pointer;
+  transition: 0.5s;
 
-    &:hover {
-        color: var(--black);
-    }
+  &:hover {
+    color: var(--black);
+  }
 }

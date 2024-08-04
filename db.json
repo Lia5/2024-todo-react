@@ -1,13 +1,9 @@
 {
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
-  ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "list": [
+    { "id": "1", "title": "a title", "date": "01-08-2024", "status": "need" },
+    { "id": "2", "title": "another title 2", "date": "01-08-2024", "status": "done" },
+    { "id": "3", "title": "another title 3", "date": "02-08-2024", "status": "need" },
+    { "id": "4", "title": "another title 4", "date": "02-08-2024", "status": "need" },
+    { "id": "5", "title": "another title 5", "date": "01-08-2024", "status": "done" }
+  ]
 }
