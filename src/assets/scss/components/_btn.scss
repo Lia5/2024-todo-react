@@ -44,20 +44,18 @@
   }
 
   &-primary {
+    border-color: var(--primaryBorder);
     border-color: var(--primary);
-    background-color: var(--primary);
-    color: var(--white);
+    color: var(--primary);
 
     &:hover {
-      border-color: var(--primaryBorder);
       background-color: var(--primaryHover);
       color: var(--white);
     }
   }
 
   &-warning {
-    border-color: var(--warning);
-    background-color: var(--warning);
+    border-color: var(--warningBorder);
     color: var(--black);
 
     svg {
@@ -65,13 +63,23 @@
     }
 
     &:hover {
-      border-color: var(--warningBorder);
       background-color: var(--warningHover);
       color: var(--black);
 
       svg {
         stroke: var(--lightBlack);
       }
+    }
+  }
+
+  &-danger {
+    border-color: var(--danger);
+    color: var(--danger);
+
+    &:hover {
+      border-color: var(--dangerHover);
+      background-color: var(--dangerHover);
+      color: var(--white);
     }
   }
 
@@ -84,6 +92,40 @@
       height: 1.4rem;
       stroke: var(--white);
       transition: 0.5s;
+    }
+
+    &--circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3.5rem;
+      min-width: auto;
+      height: 3.5rem;
+      min-height: initial;
+      margin-left: auto;
+      margin-right: 0;
+      padding: 0;
+      border: 1px solid var(--mainColor);
+      border-radius: 50%;
+      background: var(--white);
+      box-shadow: -2px 0px 3px rgba(40, 40, 40, 0.18);
+      cursor: pointer;
+      transition: 0.5s;
+
+      svg {
+        width: 1.4rem;
+        height: 1.4rem;
+        stroke: var(--lightBlack);
+        transition: 0.5s;
+      }
+
+      &:hover {
+        background: var(--mainColor);
+
+        svg {
+          stroke: var(--white);
+        }
+      }
     }
   }
 }
