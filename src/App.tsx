@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import '@/i18n';
 import { fetchApi } from '@/services/fetchApi';
@@ -7,7 +7,7 @@ import { AddingBox } from '@/components/AddingBox';
 import { NeedDoList } from '@/components/Lists/NeedDoList';
 import { CompleteList } from '@/components/Lists/CompleteList';
 import './App.scss';
-import { Post } from '@/types/api/posts';
+import { List } from '@/types/api/list';
 
 export function App() {
   const {
@@ -15,16 +15,15 @@ export function App() {
     i18n: { language },
   } = useTranslation();
 
+  const [list, setList] = useState<List[]>([]);
+  const listNeed = useMemo(() => list.filter((item) => item.status === 'need'), [list]);
+  const listDone = useMemo(() => list.filter((item) => item.status === 'done'), [list]);
+
   useEffect(() => {
-    console.log('123');
-    fetchApi<Post[]>('/posts').then((res) => {
+    fetchApi<List[]>('/list').then((res) => {
+      setList(res);
       console.log(res);
     });
-    // fetch('/api/posts')
-    //   .then((response) => response.json())
-    //   .then((res) => {
-    //     console.log(res);
-    //   });
   }, []);
 
   return (
@@ -35,8 +34,9 @@ export function App() {
           <h3>Current Language: {language}</h3>
           <AddingBox />
           <div className="lists show">
-            <NeedDoList />
-            <CompleteList />
+            <NeedDoList list={listNeed} />
+            <hr />
+            <CompleteList list={listDone} />
           </div>
         </div>
       </div>
