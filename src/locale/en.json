@@ -1,4 +1,6 @@
 {
   "title": "Title {{appName}}",
-  "list": "List"
+  "list": "List",
+  "save": "Save",
+  "cancel": "Cancel"
 }

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { fetchApiChangeStatus } from '@/services/fetchApi';
 import sprite from '../../../assets/sprite.svg';
-import './NeedDoList.scss';
 import { List } from '@/types/api/list';
+import './NeedDoList.scss';
 
 interface NeedDoListProps {
   list: List[];
@@ -10,6 +11,9 @@ interface NeedDoListProps {
 
 export const NeedDoList: React.FC<NeedDoListProps> = ({ list }) => {
   const { t } = useTranslation();
+  const changeStatus = (item: List, newStatus: string) => {
+    fetchApiChangeStatus('/list', item, newStatus);
+  };
 
   return (
     <div>
@@ -18,7 +22,7 @@ export const NeedDoList: React.FC<NeedDoListProps> = ({ list }) => {
         {list.map((item) => (
           <li key={item.id} className="list-item">
             <label>
-              <input type="checkbox" />
+              <input type="checkbox" onChange={changeStatus(item, 'done')} />
               <span> {item.title} </span>
             </label>
             <button className="btn btn-icon btn-cross">
