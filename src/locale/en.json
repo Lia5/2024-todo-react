@@ -2,5 +2,9 @@
   "title": "Title {{appName}}",
   "list": "List",
   "save": "Save",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+  "areYouShure": "Are you shure?",
+  "yes": "Yes",
+  "no": "No",
+  "itemDeleted": "Item Deletes"
 }

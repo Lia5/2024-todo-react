@@ -1,5 +1,6 @@
 import React from 'react';
 import { List } from '@/types/api/list';
+import { changeListItemStatus } from '@/api/list';
 interface DoneDoListProps {
   list: List[];
 }
@@ -12,8 +13,7 @@ export const CompleteList: React.FC<DoneDoListProps> = ({ list }) => {
         <ul className="acc__content">
           {list.map((item) => (
             <li key={item.id} className="done-item">
-              {' '}
-              {item.title}{' '}
+              <button onClick={() => changeListItemStatus(item, 'need')}>{item.title}</button>
             </li>
           ))}
         </ul>

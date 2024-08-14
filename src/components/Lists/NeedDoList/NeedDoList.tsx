@@ -1,7 +1,9 @@
 import React from 'react';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import { useTranslation } from 'react-i18next';
-import { fetchApiChangeStatus } from '@/services/fetchApi';
 import sprite from '../../../assets/sprite.svg';
+import { changeListItemStatus, ListItemDelete } from '@/api/list';
 import { List } from '@/types/api/list';
 import './NeedDoList.scss';
 
@@ -11,8 +13,21 @@ interface NeedDoListProps {
 
 export const NeedDoList: React.FC<NeedDoListProps> = ({ list }) => {
   const { t } = useTranslation();
-  const changeStatus = (item: List, newStatus: string) => {
-    fetchApiChangeStatus('/list', item, newStatus);
+
+  const deleteItem = (id: string) => {
+    withReactContent(Swal)
+      .fire({
+        title: t('areYouShure'),
+        showCancelButton: true,
+        confirmButtonText: t('yes'),
+        cancelButtonText: t('no'),
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          ListItemDelete(id);
+          Swal.fire(t('itemDeleted'), '', 'success');
+        }
+      });
   };
 
   return (
@@ -22,10 +37,15 @@ export const NeedDoList: React.FC<NeedDoListProps> = ({ list }) => {
         {list.map((item) => (
           <li key={item.id} className="list-item">
             <label>
-              <input type="checkbox" onChange={changeStatus(item, 'done')} />
+              <input
+                type="checkbox"
+                onChange={() => {
+                  changeListItemStatus(item, 'done');
+                }}
+              />
               <span> {item.title} </span>
             </label>
-            <button className="btn btn-icon btn-cross">
+            <button className="btn btn-icon btn-cross" onClick={() => deleteItem(item.id)}>
               <svg>
                 <use href={`${sprite}#cross`} />
               </svg>
