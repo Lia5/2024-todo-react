@@ -31,7 +31,7 @@ export function App() {
       <div className="main">
         <div className="container">
           <h1>{t('title', { appName: 'TODO' })}</h1>
-          <h3>Current Language: {language}</h3>
+          <h2>Current Language: {language}</h2>
           <AddingBox list={list} setList={setList} />
           <div className="lists show">
             <NeedDoList list={listNeed} />

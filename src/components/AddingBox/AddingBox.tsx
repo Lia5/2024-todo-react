@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
 import { fetchApiPush } from '@/services/fetchApi';
@@ -8,7 +8,7 @@ import './AddingBox.scss';
 
 interface ListProps {
   list: List[];
-  setList: React.FC;
+  setList: Dispatch<SetStateAction<List[]>>;
 }
 
 export const AddingBox: React.FC<ListProps> = ({ list, setList }) => {
@@ -16,11 +16,8 @@ export const AddingBox: React.FC<ListProps> = ({ list, setList }) => {
 
   const [addBox, setAddBox] = useState<boolean>();
   const [input, setInput] = useState<string>('');
-  const showAddingBox = () => {
-    setAddBox(true);
-  };
-  const hideAddingBox = () => {
-    setAddBox(false);
+  const toggleAddingBox = () => {
+    setAddBox((prev) => !prev);
   };
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -48,6 +45,7 @@ export const AddingBox: React.FC<ListProps> = ({ list, setList }) => {
   return (
     <div>
       <div className="main-title">{t('title', { appName: 'TODO' })}</div>
+      {/* {addBox && ( */}
       <div className={`adding-box ${addBox ? 'show' : ''}`}>
         <input id="todo-field" type="text" placeholder="Введіть текст" onChange={inputHandler} />
         <div className="error">error_text</div>
@@ -55,13 +53,14 @@ export const AddingBox: React.FC<ListProps> = ({ list, setList }) => {
           <button className="btn btn-primary" onClick={addTask}>
             {t('save')}
           </button>
-          <button className="btn btn-danger" onClick={hideAddingBox}>
+          <button className="btn btn-danger" onClick={toggleAddingBox}>
             {t('cancel')}
           </button>
         </div>
       </div>
+      {/* )} */}
       {!addBox && (
-        <button className="btn btn-icon btn-icon--circle" onClick={showAddingBox}>
+        <button className="btn btn-icon btn-icon--circle" onClick={toggleAddingBox}>
           <svg>
             <use href={`${sprite}#plus`} />
           </svg>
