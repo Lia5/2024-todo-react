@@ -16,19 +16,19 @@
       "id": "3",
       "title": "another title 3",
       "date": "2024-08-02T12:34:56.789Z",
-      "status": "need"
+      "status": "done"
     },
     {
       "id": "4",
       "title": "another title 4",
       "date": "2024-08-02T12:34:56.789Z",
-      "status": "need"
+      "status": "done"
     },
     {
       "id": "5",
       "title": "another title 5",
       "date": "2024-08-04T12:34:56.789Z",
-      "status": "done"
+      "status": "need"
     },
     {
       "id": "45e59ef8-a9ed-4fe7-8af5-5fa771558f34",

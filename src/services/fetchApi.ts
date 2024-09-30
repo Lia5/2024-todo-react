@@ -12,23 +12,18 @@ export function fetchApiPush<T>(path: string, item: T): Promise<T> {
   }).then((response) => response.json());
 }
 
-export function fetchApiChangeStatus<T extends { status: string }>(
-  path: string,
-  item: T,
-  newStatus: string,
-): Promise<T> {
-  const updatedItem = { ...item, status: newStatus };
-  return fetch(`/api/${path}`, {
+export function fetchApiPut<T>(path: string, body: T): Promise<T> {
+  return fetch(`/api${path}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(updatedItem),
+    body: JSON.stringify(body),
   }).then((response) => response.json());
 }
 
-export function fetchApiDelete<T>(path: string, id: string): Promise<T> {
-  return fetch(`/api/${path}/${id}`, {
+export function fetchApiDelete<T>(path: string): Promise<T> {
+  return fetch(`/api${path}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

@@ -34,9 +34,9 @@ export function App() {
           <h2>Current Language: {language}</h2>
           <AddingBox list={list} setList={setList} />
           <div className="lists show">
-            <NeedDoList list={listNeed} />
+            <NeedDoList list={listNeed} setList={setList} />
             <hr />
-            <CompleteList list={listDone} />
+            <CompleteList list={listDone} setList={setList} />
           </div>
         </div>
       </div>

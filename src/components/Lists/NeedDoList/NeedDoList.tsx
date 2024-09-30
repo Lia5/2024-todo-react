@@ -9,10 +9,19 @@ import './NeedDoList.scss';
 
 interface NeedDoListProps {
   list: List[];
+  setList: any;
 }
 
-export const NeedDoList: React.FC<NeedDoListProps> = ({ list }) => {
+export const NeedDoList: React.FC<NeedDoListProps> = ({ list, setList }) => {
   const { t } = useTranslation();
+
+  const onChangeItem = (item: List) => {
+    changeListItemStatus(item, 'done').catch(console.log('Error Put'));
+    const newList = list.map((listItem) => {
+      return listItem.id === item.id ? { ...listItem, status: 'done' } : listItem;
+    });
+    setList(newList);
+  };
 
   const deleteItem = (id: string) => {
     withReactContent(Swal)
@@ -40,7 +49,7 @@ export const NeedDoList: React.FC<NeedDoListProps> = ({ list }) => {
               <input
                 type="checkbox"
                 onChange={() => {
-                  changeListItemStatus(item, 'done');
+                  onChangeItem(item);
                 }}
               />
               <span> {item.title} </span>
