@@ -36,10 +36,8 @@ export const AddingBox: React.FC<ListProps> = ({ list, setList }) => {
     status: 'need',
   };
   const addTask = () => {
-    console.log('add task1', list);
     setList([...list, newTask]);
     fetchApiPush('/list', newTask);
-    console.log('add task2', list);
   };
 
   return (

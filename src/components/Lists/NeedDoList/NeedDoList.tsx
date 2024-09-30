@@ -9,10 +9,11 @@ import './NeedDoList.scss';
 
 interface NeedDoListProps {
   list: List[];
+  listDone: List[];
   setList: any;
 }
 
-export const NeedDoList: React.FC<NeedDoListProps> = ({ list, setList }) => {
+export const NeedDoList: React.FC<NeedDoListProps> = ({ list, listDone, setList }) => {
   const { t } = useTranslation();
 
   const onChangeItem = (item: List) => {
@@ -20,7 +21,7 @@ export const NeedDoList: React.FC<NeedDoListProps> = ({ list, setList }) => {
     const newList = list.map((listItem) => {
       return listItem.id === item.id ? { ...listItem, status: 'done' } : listItem;
     });
-    setList(newList);
+    setList([...newList, ...listDone]);
   };
 
   const deleteItem = (id: string) => {
