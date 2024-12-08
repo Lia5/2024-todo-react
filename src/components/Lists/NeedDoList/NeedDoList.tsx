@@ -36,12 +36,9 @@ export const NeedDoList: React.FC<NeedDoListProps> = ({ list, listDone, setList 
         if (result.isConfirmed) {
           ListItemDelete(id)
             .then(() => {
-              console.log('****isd', id);
-              console.log('****list', list);
               const updatedList = list.filter((item) => item.id !== id);
-              console.log('****updatedList', updatedList);
-              Swal.fire(t('itemDeleted'), '', 'success');
               setList(updatedList);
+              Swal.fire(t('itemDeleted'), '', 'success');
             })
             .catch((error) => {
               console.error('Error deleting item:', error);

@@ -13,7 +13,6 @@ export function fetchApiPush<T>(path: string, item: T): Promise<T> {
 }
 
 export function fetchApiPut<T>(path: string, body: T): Promise<T> {
-  console.log('body', body);
   return fetch(`/api${path}`, {
     method: 'PUT',
     headers: {
