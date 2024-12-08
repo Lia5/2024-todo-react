@@ -1,19 +1,16 @@
 .btns {
-  @include media-sm {
-    flex-wrap: initial;
-  }
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 41px;
+
+  /* stylelint-disable-next-line order/order */
+  @include media-sm {
+    flex-wrap: initial;
+  }
 }
 
 .btn {
-  @include media-sm {
-    width: auto;
-  }
-
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -127,6 +124,10 @@
         }
       }
     }
+  }
+
+  @include media-sm {
+    width: auto;
   }
 }
 
