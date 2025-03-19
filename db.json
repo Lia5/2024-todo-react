@@ -1,9 +1,46 @@
 {
   "list": [
-    { "id": "1", "title": "a title", "date": "01-08-2024", "status": "need" },
-    { "id": "2", "title": "another title 2", "date": "01-08-2024", "status": "done" },
-    { "id": "3", "title": "another title 3", "date": "02-08-2024", "status": "need" },
-    { "id": "4", "title": "another title 4", "date": "02-08-2024", "status": "need" },
-    { "id": "5", "title": "another title 5", "date": "01-08-2024", "status": "done" }
+    {
+      "id": "1",
+      "title": "a title",
+      "date": "2024-08-01T00:00:00Z",
+      "status": "need"
+    },
+    {
+      "id": "2",
+      "title": "another title 2",
+      "date": "2024-08-01T00:00:00Z",
+      "status": "done"
+    },
+    {
+      "id": "3",
+      "title": "another title 3",
+      "date": "2024-08-02T12:34:56.789Z",
+      "status": "done"
+    },
+    {
+      "id": "4",
+      "title": "another title 4",
+      "date": "2024-08-02T12:34:56.789Z",
+      "status": "done"
+    },
+    {
+      "id": "5",
+      "title": "another title 5",
+      "date": "2024-08-04T12:34:56.789Z",
+      "status": "need"
+    },
+    {
+      "id": "45e59ef8-a9ed-4fe7-8af5-5fa771558f34",
+      "title": "yfki",
+      "date": "2024-08-14T04:07:47.346Z",
+      "status": "need"
+    },
+    {
+      "id": "3a0b1add-33c6-4505-9890-65af003c2b75",
+      "title": "во65у6о",
+      "date": "2024-09-30T11:59:56.439Z",
+      "status": "need"
+    }
   ]
 }

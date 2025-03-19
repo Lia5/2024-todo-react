@@ -1,4 +1,10 @@
 {
   "title": "Title {{appName}}",
-  "list": "List"
+  "list": "List",
+  "save": "Save",
+  "cancel": "Cancel",
+  "areYouShure": "Are you shure?",
+  "yes": "Yes",
+  "no": "No",
+  "itemDeleted": "Item Deleted"
 }

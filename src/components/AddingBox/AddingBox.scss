@@ -1,0 +1,14 @@
+.adding-box {
+  width: 100%;
+  max-width: 50rem;
+  margin: 4rem auto 3.2rem;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+
+  &.show {
+      opacity: 1;
+      pointer-events: all;
+  }
+}
